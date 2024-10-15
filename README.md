@@ -66,7 +66,7 @@ To get started with **Libft**, follow these steps to clone and build the library
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/libft.git
+   git clone https://github.com/kitearuba/libft.git
    ```
 
 2. **Navigate to the Project Directory**:
