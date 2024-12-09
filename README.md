@@ -4,7 +4,7 @@
 
 ![Libft](https://img.shields.io/badge/Libft-C_Library-blue?style=flat-square) ![C Programming](https://img.shields.io/badge/Language-C-brightgreen?style=flat-square) ![Makefile](https://img.shields.io/badge/Build-Makefile-yellow?style=flat-square)
 
-Welcome to the enhanced **Libft** repository—a custom C library that includes reimplementations of essential C library functions, as well as `ft_printf`, `ft_printf_fd`, and `get_next_line`. This library is designed for modular use in future projects, offering flexibility and utility in formatted output, string manipulation, memory handling, and file reading.
+Welcome to the enhanced **Libft** repository—a custom C library that includes reimplementations of essential C library functions, as well as `ft_printf`, `ft_printf_fd`, and `get_next_line`. This library is designed to provide flexibility and utility for future C projects, offering functions for string manipulation, memory management, formatted output, and file reading.
 
 ---
 
@@ -20,57 +20,42 @@ Welcome to the enhanced **Libft** repository—a custom C library that includes 
    - [Additional Utility Functions](#additional-utility-functions)
    - [`ft_printf` and `ft_printf_fd`](#ft_printf-and-ft_printf_fd)
    - [`get_next_line`](#get_next_line)
-7. [Future Improvements](#future-improvements)
-8. [Contributing](#contributing)
-9. [Acknowledgements](#acknowledgements)
-10. [Author](#author)
+7. [Contributing](#contributing)
+8. [Acknowledgements](#acknowledgements)
+9. [Author](#author)
 
 ---
 
 ## 📖 **Introduction**
 
-The enhanced **Libft** consolidates standard C library reimplementations, utility functions, `ft_printf`, `ft_printf_fd`, and `get_next_line`. This version adds flexibility with file descriptor-based formatted output while retaining consistency and modularity for use in various C projects.
+The enhanced **Libft** library consolidates reimplementations of standard C functions with additional utility functions, formatted output using `ft_printf` and `ft_printf_fd`, and file reading with `get_next_line`. This comprehensive toolkit is designed for use in a variety of C projects.
 
 ---
 
 ## 📂 **Project Structure**
 
-### Current Structure
 ```bash
 .
 ├── include/           # Header files
 │   └── libft.h        # Prototypes for all functions
-├── src/               # Source files
-│   ├── ft_*.c         # Core library functions
+├── src/               # Source files implementing all required functions
+│   ├── ft_*.c         # Standard and utility functions
 │   ├── ft_printf*.c   # Files for ft_printf and ft_printf_fd
-│   ├── handle_*.c     # Modular handlers for specific printf cases
-│   ├── get_next_line*.c # Files for get_next_line implementation
+│   ├── handle_*.c     # Modular handlers for specific ft_printf cases
+│   ├── get_next_line*.c # get_next_line implementation
 ├── Makefile           # Makefile for building the library
-├── README.md          # Project documentation
+├── README.md          # This README file
 └── libft.a            # Compiled static library
 ```
 
-### Suggested Modular Structure
-If you plan to make the project more modular, consider the following structure:
-```bash
-.
-├── include/           # Header files
-├── src/
-│   ├── core/          # Core libc reimplementations
-│   ├── printf/        # ft_printf and its handlers
-│   ├── gnl/           # get_next_line implementation
-│   └── utils/         # Utility functions and helpers
-├── Makefile
-├── README.md
-└── libft.a
-```
+This structure groups all functions into a single `src` directory, with file names reflecting their functionality. Future restructuring could further modularize components.
 
 ---
 
 ## 🛠️ **Technologies Used**
 
-- **C Programming**: Core language for implementing all functions.
-- **Makefile**: Automates compilation.
+- **C Programming**: The core language for implementing all functions.
+- **Makefile**: Automates the compilation process.
 - **GCC Compiler**: Compiles and links the source files into a static library.
 
 ---
@@ -100,7 +85,7 @@ The `libft.a` file will be created in the root directory.
 
 ## 🚀 **Usage**
 
-Link the library in your projects for extended functionality.
+To use **Libft** in your C projects:
 
 1. **Include the Header in Your Code**:
    ```c
@@ -111,6 +96,8 @@ Link the library in your projects for extended functionality.
    ```bash
    gcc -o myproject myproject.c -L. -lft
    ```
+
+The `-L.` flag specifies the directory containing `libft.a`, and the `-lft` flag links the library.
 
 ---
 
@@ -125,15 +112,15 @@ Reimplementations of common libc functions for string manipulation, memory manag
 - And more.
 
 ### 🔧 **Additional Utility Functions**
-Added functions like `ft_substr`, `ft_itoa`, and `ft_strjoin` provide more flexibility for handling strings and memory.
+Additional functions like `ft_substr`, `ft_itoa`, and `ft_strjoin` provide flexibility for handling strings and memory.
 
 ### 🌟 **`ft_printf` and `ft_printf_fd`**
 #### **`ft_printf`**
-A custom reimplementation of `printf` supporting:
+A reimplementation of `printf` supporting:
 - `%c`, `%s`, `%d`, `%i`, `%u`, `%x`, `%X`, `%p`, and `%%`.
 
 #### **`ft_printf_fd`**
-An extension of `ft_printf` that allows output to a specific file descriptor:
+An extension of `ft_printf` that allows dynamic output to a specific file descriptor:
 ```c
 ft_printf_fd(STDERR_FILENO, "Error: %s\n", "Something went wrong!");
 ```
@@ -145,23 +132,16 @@ A function for reading a file line-by-line, supporting multiple file descriptors
 
 ## 🌟 **New Features**
 1. **`ft_printf_fd`**:
-   - Dynamic output to any file descriptor.
-   - Simplifies error handling by allowing direct output to `stderr`.
+   - Dynamic output to any file descriptor, enabling flexible error handling and formatted output.
 
-2. **Improved Code Modularity**:
-   - Each aspect of `ft_printf` is split into manageable handler functions (e.g., `handle_char`, `handle_int`).
-
----
-
-## 📈 **Future Improvements**
-1. **Folder Restructuring**:
-   - Modularize into `core`, `printf`, and `utils` directories for better organization.
-2. **Dynamic Buffer Management**:
-   - Extend `get_next_line` for variable buffer sizes.
+2. **Improved Modular Handlers**:
+   - Each `ft_printf` conversion (e.g., `%d`, `%s`) is managed by dedicated functions (`handle_int`, `handle_string`), improving maintainability.
 
 ---
 
 ## 🤝 **Contributing**
+
+Contributions are welcome! Follow these steps:
 
 1. **Fork the Repository**.
 2. **Create a Branch** (`git checkout -b feature/AmazingFeature`).
@@ -175,5 +155,13 @@ A function for reading a file line-by-line, supporting multiple file descriptors
 
 - **chrrodri**  
   [GitHub Profile](https://github.com/kitearuba)
+
+---
+
+## 🎉 **Final Thoughts**
+
+This version of **Libft** is a comprehensive toolkit for future C projects, offering flexibility, modularity, and reusability. It includes everything from basic utility functions to advanced file handling and formatted output.
+
+Good luck, and happy coding! 🚀
 
 ---
