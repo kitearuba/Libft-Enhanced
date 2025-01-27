@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chrrodri <chrrodri@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/10 21:19:50 by chrrodri          #+#    #+#             */
-/*   Updated: 2024/12/15 20:21:22 by chrrodri         ###   ########.fr       */
+/*   Created: 2025/01/03 18:16:39 by chrrodri          #+#    #+#             */
+/*   Updated: 2025/01/15 22:08:11 by chrrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
 
-int	ft_printf(const char *format, ...)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	va_list	args;
-	int		count;
-
-	count = 0;
-	va_start(args, format);
-	count = ft_printf_fd(FT_STDOUT, format, args);
-	va_end(args);
-	return (count);
+	while (*s1 && *s2)
+	{
+		if (*s1 != *s2)
+			return ((unsigned char)*s1 - (unsigned char)*s2);
+		s1++;
+		s2++;
+	}
+	return ((unsigned char)*s1 - (unsigned char)*s2);
 }

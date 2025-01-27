@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_wdcounter.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chrrodri <chrrodri@student.42barcelon      +#+  +:+       +#+        */
+/*   By: vinograd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/10 21:19:50 by chrrodri          #+#    #+#             */
-/*   Updated: 2024/12/15 20:21:22 by chrrodri         ###   ########.fr       */
+/*   Created: 2019/05/13 11:52:22 by vinograd          #+#    #+#             */
+/*   Updated: 2019/05/13 11:55:12 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
-
-int	ft_printf(const char *format, ...)
+int		ft_wdcounter(char const *str, char c)
 {
-	va_list	args;
-	int		count;
+	int i;
+	int words;
 
-	count = 0;
-	va_start(args, format);
-	count = ft_printf_fd(FT_STDOUT, format, args);
-	va_end(args);
-	return (count);
+	words = 0;
+	i = 0;
+	while (str[i])
+	{
+		while (str[i] == c && str[i] != '\0')
+			i++;
+		if (str[i])
+			words++;
+		while (str[i] != c && str[i] != '\0')
+			i++;
+	}
+	return (words);
 }
