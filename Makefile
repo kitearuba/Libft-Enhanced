@@ -6,7 +6,7 @@
 #    By: chrrodri <chrrodri@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/13 11:12:18 by chrrodri          #+#    #+#              #
-#    Updated: 2024/07/28 20:42:27 by chrrodri         ###   ########.fr        #
+#    Updated: 2025/01/31 21:46:47 by chrrodri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ AR = ar rcs
 SRCS_DIR = src
 INCLUDES = include/libft.h
 
-# All source files (from libft, printf, and get_next_line)
+# All source files (from libft, printf, get_next_line, and extra)
 SRCS = $(SRCS_DIR)/ft_isalpha.c $(SRCS_DIR)/ft_isdigit.c \
        $(SRCS_DIR)/ft_isalnum.c $(SRCS_DIR)/ft_isascii.c \
        $(SRCS_DIR)/ft_isprint.c $(SRCS_DIR)/ft_strlen.c \
@@ -54,7 +54,7 @@ SRCS = $(SRCS_DIR)/ft_isalpha.c $(SRCS_DIR)/ft_isdigit.c \
        $(SRCS_DIR)/utils.c $(SRCS_DIR)/get_next_line.c \
        $(SRCS_DIR)/get_next_line_bonus.c $(SRCS_DIR)/ft_strappend.c \
        $(SRCS_DIR)/ft_printf_fd.c $(SRCS_DIR)/ft_strcmp.c \
-       $(SRCS_DIR)/ft_wdcounter.c
+       $(SRCS_DIR)/ft_atoi_base.c $(SRCS_DIR)/ft_strtol.c \
 
 # Object files
 OBJS = $(SRCS:.c=.o)

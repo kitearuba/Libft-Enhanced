@@ -6,7 +6,7 @@
 /*   By: chrrodri <chrrodri@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 11:36:52 by chrrodri          #+#    #+#             */
-/*   Updated: 2024/12/10 21:30:00 by chrrodri         ###   ########.fr       */
+/*   Updated: 2025/01/31 21:48:03 by chrrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,13 @@
 /*                                Macros                                      */
 /* ************************************************************************** */
 
-# define FT_STDOUT 1          /* File descriptor for standard output */
+# define FT_STDOUT 1
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42      /* Default buffer size for get_next_line */
+#  define BUFFER_SIZE 42
 # endif // BUFFER_SIZE
+# define MAX_INT 2147483647
+# define MIN_INT -2147483648
+# define MAX_LONG 9223372036854775807L
 
 /* ************************************************************************** */
 /*                           Function Prototypes                              */
@@ -56,7 +59,6 @@ int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strdup(const char *s1);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
-int		ft_wdcounter(char const *str, char c);
 
 /* Memory manipulation */
 void	*ft_memset(void *b, int c, size_t len);
@@ -69,6 +71,8 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 /* Number conversion and memory allocation */
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
+int		ft_atoi_base(const char *str, int base);
+long	ft_strtol(const char *str, char **endptr, int base);
 
 /* --------------------------- Additional Functions ------------------------- */
 
